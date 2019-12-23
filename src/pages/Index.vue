@@ -40,6 +40,46 @@
         </div>
       </div>
     </section>
+
+
+    <section class="bg-black text-white py-64 relative">
+      <div class="container mx-auto flex ">
+        <div>
+          <div class="flex pr-24 mb-32">
+            <g-image src="~/dotted-trianlge.svg" class="mr-4 -ml-Hello kuda32"/>
+            <div class="">
+              <h1 class="text-5xl font-black">This is what I do</h1>
+              <p class="text-2xl">This is my pitch.What I can do for you. I am selling myself to you, my potential client.</p>
+            </div>
+          </div>
+
+          <div class="ml-36 pl-4">
+
+            <ul>
+              <li v-for="service in services" :key="service" class="flex items-center text-xl py-2">
+                <svg class="mr-4" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C9.34784 22 6.8043 20.9464 4.92893 19.0711C3.05357 17.1957 2 14.6522 2 12C2 9.34784 3.05357 6.8043 4.92893 4.92893C6.8043 3.05357 9.34784 2 12 2C14.6522 2 17.1957 3.05357 19.0711 4.92893C20.9464 6.8043 22 9.34784 22 12C22 14.6522 20.9464 17.1957 19.0711 19.0711C17.1957 20.9464 14.6522 22 12 22ZM12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20ZM9.7 11.3L11 12.59L14.3 9.29C14.4924 9.12744 14.7392 9.0435 14.9908 9.05496C15.2425 9.06643 15.4805 9.17246 15.6574 9.35185C15.8343 9.53125 15.9369 9.77078 15.9448 10.0226C15.9527 10.2744 15.8653 10.5199 15.7 10.71L11.7 14.71C11.5131 14.8932 11.2618 14.9959 11 14.9959C10.7382 14.9959 10.4869 14.8932 10.3 14.71L8.3 12.71C8.13472 12.5199 8.04729 12.2744 8.05519 12.0226C8.06309 11.7708 8.16573 11.5312 8.34259 11.3519C8.51946 11.1725 8.75752 11.0664 9.00918 11.055C9.26084 11.0435 9.50755 11.1274 9.7 11.29V11.3Z" fill="#FDD231"/>
+                </svg>
+
+                {{ service }}
+
+              </li>
+            </ul>
+            <button class="border-2 border-white text-white text-lg p-4 mt-8">
+              See more of my skills & capabilities &rightarrow;
+            </button>
+          </div>
+        </div>
+
+        <div class="-mr-24">
+          <div class="relative p-2">
+            <div class="absolute z-10 h-full w-full -mr-8 -mt-8 right-0 border-4 border-white">&nbsp;</div>
+            <div class="absolute try-position bottom-0 h-full w-full bg-yellow-brand -ml-8  -mb-8 left-0">&nbsp;</div>
+            <g-image src="~/me.jpg" class="relative z-30 max-w-md"/>
+          </div>
+        </div>
+      </div>
+    </section>
   </Layout>
 </template>
 
@@ -51,7 +91,14 @@ export default {
 
   data () {
     return {
-      shownDescription: null
+      shownDescription: null,
+      services: [
+        'Design',
+        'Programming',
+        'Consulting',
+        'Talks',
+        'Trainings'
+      ]
     }
   },
 
@@ -88,4 +135,5 @@ export default {
   width: calc(100% - 2rem);
   height: calc(100% - 2rem);
 }
+
 </style>
