@@ -87,12 +87,12 @@
         <div class="-mr-24">
           <div class="relative p-2">
             <div
-              class="absolute z-10 h-full w-full -mr-8 -mt-8 right-0 border-4 border-white"
+              class="absolute z-10 h-full w-full -mr-8 mt-8 right-0 border-4 border-white"
             >&nbsp;</div>
             <div
-              class="absolute try-position bottom-0 h-full w-full bg-yellow-brand -ml-8 -mb-8 left-0"
+              class="absolute z-20 try-position bottom-0 h-full w-full bg-yellow-brand -ml-8 -mb-16 left-0"
             >&nbsp;</div>
-            <g-image src="~/me.jpg" class="relative z-30 max-w-md" />
+            <g-image src="~/me.jpg" class="relative z-30 max-w-md mt-24" />
           </div>
         </div>
       </div>
@@ -160,6 +160,40 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="bg-black text-white text-xl pb-32">
+      <div class="container mx-auto flex justify-between rounded p-8 relative border-t">
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Extras</h3>
+          <ul>
+            <li class="mb-4">Allanite Classified</li>
+            <li class="mb-4">School Metrics</li>
+            <li class="mb-4">Progic Wallet</li>
+            <li class="mb-4">Progic</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Stay in the Loop</h3>
+          <p class="mb-2">
+            Be the first to know if there is a new product or I have bought a new dog.
+          </p>
+
+          <p class="mb-4">
+            No spam, I promise.
+          </p>
+
+          <div class="bg-white p-4 flex rounded">
+            <input type="text" class="flex-1 p-4 outline-none text-black" placeholder="Your email address">
+            <button class="bg-yellow-brand hover:shadow-md text-black text-lg py-4 px-16 font-bold rounded">Subscribe</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mx-auto p-8 rounded bg-yellow-brand text-center text-black font-medium">
+        This website was designed and coded with  ❤️  by Kudakwashe Paradzayi - <a href="#" class="underline">Get yours too</a>
       </div>
     </section>
   </Layout>
