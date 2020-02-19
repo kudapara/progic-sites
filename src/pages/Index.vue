@@ -80,13 +80,43 @@
         </div>
       </div>
     </section>
+
+    <section class="bg-black flex items-center justify-center">
+      <div class="container rounded bg-yellow-brand p-8 relative">
+        <h3 class="text-5xl font-black">Don't wait until its too late</h3>
+        <p>A brief by consise description about the value I can provide people</p>
+
+        <button class="bg-black text-white text-lg rounded p-4 mt-8">
+          Call to action &rightarrow;
+        </button>
+
+        <g-image src="~/me.jpg" class="absolute right-0 mr-8 border-4 border-black z-30 w-24 h-24 rounded-full"/>
+
+      </div>
+    </section>
+
+
+    <section class="bg-black text-white text-xl py-64">
+      <div class="container mx-auto flex flex-col items-center">
+        <Accordion title="FAQ?" :items="frequentlyAskedQuestions"/>
+
+        <button class="border-2 border-white text-white text-lg  p-4">
+          You could ask me anything &rightarrow;
+        </button>
+      </div>
+    </section>
   </Layout>
 </template>
 
 <script>
+import Accordion from '@/components/Accordion'
 export default {
   metaInfo: {
     title: 'Hello, world!'
+  },
+
+  components: {
+    Accordion
   },
 
   data () {
@@ -98,6 +128,29 @@ export default {
         'Consulting',
         'Talks',
         'Trainings'
+      ],
+
+      frequentlyAskedQuestions: [
+        { 
+          title: 'How much do your services cost?',
+          description: `
+            It depends!
+
+            Most projects range from  USD $999  to USD $10,000 depending on the complexity and scope of the project. Usually after each project there is a monthly fee of about USD $199 for maintainance and minor updates.
+
+            Any major features to be introduced after wards will be billed as a seperate project and the amount is subject to negotiation. 
+          `
+        },
+        { 
+          title: 'How much do your services cost?',
+          description: `
+            It depends!
+
+            Most projects range from  USD $999  to USD $10,000 depending on the complexity and scope of the project. Usually after each project there is a monthly fee of about USD $199 for maintainance and minor updates.
+
+            Any major features to be introduced after wards will be billed as a seperate project and the amount is subject to negotiation. 
+          `
+        }
       ]
     }
   },
@@ -131,9 +184,23 @@ export default {
   background-image: linear-gradient(#fdd231, #fdd2310a)
 }
 
+
 .center-absolute {
   width: calc(100% - 2rem);
   height: calc(100% - 2rem);
 }
 
+.bg-transparent-black {
+  background-color: rgba(255, 255, 255, 0.1)
+}
+
+.faq-body {
+  height: 0;
+  overflow: hidden;
+  animation: transition max-height .3s;
+}
+.faq-body--open {
+  max-height: 500px;
+  transition: max-height 0.25s ease-in;
+}
 </style>
