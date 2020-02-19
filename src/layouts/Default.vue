@@ -1,5 +1,8 @@
 <template>
-  <div class="layout">
+  <div class="layout bg-black">
+    <div id="stars"></div>
+    <div id="stars1"></div>
+    <div id="stars2"></div>
     <header class="bg-yellow-brand p-4">
       <nav class="container mx-auto flex items-center justify-between">
         <div>

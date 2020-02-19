@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <section class="bg-black text-white pt-64 pb-32 relative">
+    <section class="text-black pt-64 pb-32 relative">
       <div class="pt-64 container mx-auto">
         <div class="flex">
           <g-image src="~/dotted-trianlge.svg" class="mr-4 -ml-Hello kuda32" />
@@ -46,7 +46,7 @@
       </div>
     </section>
 
-    <section class="bg-black text-white py-64 relative">
+    <section class="text-white py-64 relative">
       <div class="container mx-auto flex">
         <div>
           <div class="flex pr-24 mb-32">
@@ -98,7 +98,7 @@
       </div>
     </section>
 
-    <section class="bg-black flex items-center justify-center">
+    <section class="flex items-center justify-center">
       <div class="container rounded bg-yellow-brand p-8 relative">
         <h3 class="text-5xl font-black">Don't wait until its too late</h3>
         <p>A brief by consise description about the value I can provide people</p>
@@ -112,7 +112,7 @@
       </div>
     </section>
 
-    <section class="bg-black text-white text-xl py-64">
+    <section class="text-white text-xl py-64">
       <div class="container mx-auto flex flex-col items-center">
         <Accordion title="FAQ?" :items="frequentlyAskedQuestions" />
 
@@ -122,7 +122,7 @@
       </div>
     </section>
 
-    <section class="bg-black text-white pb-64 relative">
+    <section class="text-white pb-64 relative">
       <div class="container mx-auto">
         <div class="flex pr-24 mb-32">
           <g-image src="~/dotted-trianlge.svg" class="mr-4 -ml-Hello kuda32" />
@@ -163,7 +163,7 @@
       </div>
     </section>
 
-    <section class="bg-black text-white text-xl pb-32">
+    <section class="text-white text-xl pb-32">
       <div class="container mx-auto flex justify-between rounded p-8 relative border-t">
         <div>
           <h3 class="text-2xl font-bold mb-6">Extras</h3>
@@ -272,10 +272,6 @@ export default {
 .center-absolute {
   width: calc(100% - 2rem);
   height: calc(100% - 2rem);
-}
-
-.bg-transparent-black {
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .faq-body {

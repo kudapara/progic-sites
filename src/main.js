@@ -3,6 +3,7 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
 import "./assets/css/global.css";
+import './assets/css/parallax-stars.css';
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
