@@ -175,6 +175,7 @@ module.exports = {
       sm: '0.125rem',
       default: '0.25rem',
       lg: '0.5rem',
+      xl: '1rem',
       full: '9999px',
     },
     borderWidth: {
@@ -499,5 +500,7 @@ module.exports = {
     zIndex: ['responsive'],
   },
   corePlugins: {},
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/custom-forms')
+  ],
 }

@@ -86,9 +86,7 @@
 
         <div class="-mr-24">
           <div class="relative p-2">
-            <div
-              class="absolute z-10 h-full w-full -mr-8 mt-8 right-0 border-4 border-white"
-            >&nbsp;</div>
+            <div class="absolute z-10 h-full w-full -mr-8 mt-8 right-0 border-4 border-white">&nbsp;</div>
             <div
               class="absolute z-20 try-position bottom-0 h-full w-full bg-yellow-brand -ml-8 -mb-16 left-0"
             >&nbsp;</div>
@@ -99,12 +97,145 @@
     </section>
 
     <section class="flex items-center justify-center">
-      <div class="container rounded bg-yellow-brand p-8 relative">
-        <h3 class="text-5xl font-black">Don't wait until its too late</h3>
-        <p>A brief by consise description about the value I can provide people</p>
+      <div class="container rounded bg-white text-black p-8 relative">
+        <h3 class="text-5xl font-black">We could build something great, together</h3>
 
-        <button class="bg-black text-white text-lg rounded p-4 mt-8">Call to action &rightarrow;</button>
+        <label for class="block text-xl font-black mb-4">Select the packages that suite your needs</label>
+        <p class="py-4">Every company is unique. </p>
+        <div class="flex justify-between">
+          <div
+            v-for="plan in plans"
+            :key="plan.code"
+            class="flex flex-col justify-between hover:bg-gray-200 hover:cursor-pointer hover:text-black border-4 rounded max-w-sm min-w-sm p-8 mr-4"
+            :class="{
+              'border-black': selectedPackages.includes(plan.code),
+              'bg-black': selectedPackages.includes(plan.code),
+              'text-white': selectedPackages.includes(plan.code),
+              'shadow-xl': selectedPackages.includes(plan.code)
+            }"
+            @click="toggleSelectedPackages(plan.code)"
+          >
 
+            <div class="flex justify-center -mt-12" v-if="plan.isMostPopular">
+              <div class="span px-6 bg-yellow-brand uppercase text-black border-4 rounded "
+              :class="{
+              'border-white': selectedPackages.includes(plan.code)
+              }"
+              >most popular</div>
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl font-medium">{{ plan.title }}</span>
+                <input
+                  type="checkbox"
+                  v-model="selectedPackages"
+                  name
+                  :value="plan.code"
+                  id
+                  class="form-checkbox text-yellow-brand h-8 w-8"
+                />
+              </div>
+
+              <div class="mb-4">
+                {{ plan.description }}
+                <div class="py-4">
+                  <ul>
+                    <li
+                      class="flex items-center py-1"
+                      v-for="feature in plan.features"
+                      :key="feature"
+                    >
+                      <svg
+                        class="mr-4 h-6 w-6 fill-current"
+                        viewBox="0 0 24 24"
+                        fill="fill-current"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 22C9.34784 22 6.8043 20.9464 4.92893 19.0711C3.05357 17.1957 2 14.6522 2 12C2 9.34784 3.05357 6.8043 4.92893 4.92893C6.8043 3.05357 9.34784 2 12 2C14.6522 2 17.1957 3.05357 19.0711 4.92893C20.9464 6.8043 22 9.34784 22 12C22 14.6522 20.9464 17.1957 19.0711 19.0711C17.1957 20.9464 14.6522 22 12 22ZM12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20ZM9.7 11.3L11 12.59L14.3 9.29C14.4924 9.12744 14.7392 9.0435 14.9908 9.05496C15.2425 9.06643 15.4805 9.17246 15.6574 9.35185C15.8343 9.53125 15.9369 9.77078 15.9448 10.0226C15.9527 10.2744 15.8653 10.5199 15.7 10.71L11.7 14.71C11.5131 14.8932 11.2618 14.9959 11 14.9959C10.7382 14.9959 10.4869 14.8932 10.3 14.71L8.3 12.71C8.13472 12.5199 8.04729 12.2744 8.05519 12.0226C8.06309 11.7708 8.16573 11.5312 8.34259 11.3519C8.51946 11.1725 8.75752 11.0664 9.00918 11.055C9.26084 11.0435 9.50755 11.1274 9.7 11.29V11.3Z"
+                          fill="text-current"
+                        />
+                      </svg>
+                      {{ feature }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-between">
+              <div>
+                <span class="block text-xs text-gray-600 uppercase">starting from</span>
+                <span class="text-3xl font-black">${{ plan.price }}</span>
+              </div>
+
+              <div class="text-right">
+                <span class="block text-xs text-gray-600 uppercase">Hosting & Maintanance</span>
+                <span class="text-3xl font-black">${{ plan.hostingPrice }}</span>
+                <span class="text-xs uppercase">/month</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="px-4 py-2 rounded-full bg-yellow-300 text-black inline-flex items-center mt-8"
+        >
+          <span
+            class="inline-flex items-center px-2 bg-yellow-500 uppercase tracking-wide text-xs font-black rounded-full mr-4"
+          >
+            <span class="text-xl mr-1">✌🏼</span> Bonus
+          </span> All plans come with a
+          <span class="font-bold underline px-1">free custom domain</span>,
+          <span class="font-bold underline px-1">free ssl certificate</span>, and
+          <span class="font-bold underline px-1">free hosting for the first month</span> .
+        </div>
+
+        <!-- Input section -->
+        <div
+          :class="{
+            'hidden': !selectedPackages.includes('basic') && !selectedPackages.includes('rich') && !selectedPackages.includes('webapp')
+          }"
+        >
+
+        <div class="mt-8">
+          <h3 class="text-xl font-black mb-4">Briefly Describe your Project</h3>
+          <div class="flex mb-4">
+            <div class="mr-4">
+              <label for="" class="block font-bold uppercase  mb-2">Your Name</label>
+              <input type="text" autofocus class="form-input border-black border-2" placeholder="e.g John Doe">
+            </div>
+
+            <div class="mr-4">
+              <label for="" class="block font-bold uppercase mb-2">Company Name</label>
+              <input type="text" class="form-input border-black border-2" placeholder="e.g Progic Private Limited">
+            </div>
+
+            <div class="mr-4">
+              <label for="" class="block font-bold uppercase mb-2">Company Website</label>
+                <input type="url" class="form-input border-black border-2" placeholder="e.g https://progic.co">
+              </div>
+            </div>
+          </div>
+          <div class="pr-4 mb-4">
+            <label for="" class="block font-bold uppercase mb-2">Project Description</label>
+            <textarea name class="form-textarea w-full border-black border-2" id rows="4"></textarea>
+          </div>
+        </div>
+  
+        <label for="" class="block font-bold uppercase mb-2">Email address</label>
+        <div class="bg-white p-4 flex rounded border-2 border-black mr-4">
+          <input
+            type="text"
+            class="flex-1 p-4 outline-none text-black"
+            placeholder="Your email address"
+          />
+          <button
+            class="bg-black hover:shadow-md text-white text-lg py-4 px-16 font-bold rounded"
+          >Choose Package(s) &rightarrow;</button>
+        </div>
+
+        </div>
         <g-image
           src="~/me.jpg"
           class="absolute right-0 mr-8 border-4 border-black z-30 w-24 h-24 rounded-full"
@@ -177,23 +308,26 @@
 
         <div>
           <h3 class="text-2xl font-bold mb-6">Stay in the Loop</h3>
-          <p class="mb-2">
-            Be the first to know if there is a new product or I have bought a new dog.
-          </p>
+          <p class="mb-2">Be the first to know if there is a new product or I have bought a new dog.</p>
 
-          <p class="mb-4">
-            No spam, I promise.
-          </p>
+          <p class="mb-4">No spam, I promise.</p>
 
           <div class="bg-white p-4 flex rounded">
-            <input type="text" class="flex-1 p-4 outline-none text-black" placeholder="Your email address">
-            <button class="bg-yellow-brand hover:shadow-md text-black text-lg py-4 px-16 font-bold rounded">Subscribe</button>
+            <input
+              type="text"
+              class="flex-1 p-4 outline-none text-black"
+              placeholder="Your email address"
+            />
+            <button
+              class="bg-yellow-brand hover:shadow-md text-black text-lg py-4 px-16 font-bold rounded"
+            >Subscribe</button>
           </div>
         </div>
       </div>
 
       <div class="container mx-auto p-8 rounded bg-yellow-brand text-center text-black font-medium">
-        This website was designed and coded with  ❤️  by Kudakwashe Paradzayi - <a href="#" class="underline">Get yours too</a>
+        This website was designed and coded with ❤️ by Kudakwashe Paradzayi -
+        <a href="#" class="underline">Get yours too</a>
       </div>
     </section>
   </Layout>
@@ -212,6 +346,7 @@ export default {
 
   data() {
     return {
+      selectedPackages: ["webapp"],
       shownDescription: null,
       services: ["Design", "Programming", "Consulting", "Talks", "Trainings"],
 
@@ -236,6 +371,52 @@ export default {
             Any major features to be introduced after wards will be billed as a seperate project and the amount is subject to negotiation. 
           `
         }
+      ],
+
+      plans: [
+        {
+          title: "Basic Websites",
+          code: "basic",
+          description:
+            "Static websites, useful when you are just starting out and just want to bring your brand out there",
+          price: 199,
+          hostingPrice: 9,
+          features: [
+            "5 Pages",
+            "Good Design",
+            "Best Development",
+            "Custom Domain"
+          ]
+        },
+        {
+          title: "Rich Websites",
+          code: "rich",
+          description:
+            "Rich interactive websites that allow you to edit rich text, upload media and all",
+          price: 699,
+          isMostPopular: true,
+          hostingPrice: 29,
+          features: [
+            "5 Pages",
+            "Good Design",
+            "Best Development",
+            "Custom Domain"
+          ]
+        },
+        {
+          title: "Web Applications",
+          code: "webapp",
+          description:
+            "Rich interactive websites that allow you to edit rich text, upload media and all",
+          price: 999,
+          hostingPrice: 99,
+          features: [
+            "5 Pages",
+            "Good Design",
+            "Best Development",
+            "Custom Domain"
+          ]
+        }
       ]
     };
   },
@@ -247,6 +428,14 @@ export default {
 
     hideDescription() {
       this.shownDescription = null;
+    },
+
+    toggleSelectedPackages(pkg) {
+      if (this.selectedPackages.includes(pkg)) {
+        this.selectedPackages.splice(this.selectedPackages.indexOf(pkg), 1);
+      } else {
+        this.selectedPackages.push(pkg);
+      }
     }
   }
 };
@@ -313,4 +502,5 @@ export default {
   position: relative;
   animation: animatedBackground 160s linear infinite;
 }
+
 </style>
