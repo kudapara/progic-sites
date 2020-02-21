@@ -3,64 +3,51 @@
     <div id="stars"></div>
     <div id="stars1"></div>
     <div id="stars2"></div>
-    <header class="bg-yellow-brand p-4">
-      <nav class="container mx-auto flex items-center justify-between">
-        <div>
-          <a href="#" class="nav__link">Portfolio</a>
-          <a href="#" class="nav__link" to="#">Services</a>
-          <a href="#" class="nav__link" to="#">Services</a>
-        </div>
-
-        <div class='bg-white p-4 rounded-lg shadow w-24 mr-8'>
-          <g-image src="~/progic-logo.svg" class="w-full" />
-          <span class="text-gray-800 text-center block">Founder</span>
-        </div>
-
-        <div>
-          <a href="#" class="nav__link">Twitter</a>
-          <a href="#" class="nav__link" to="#">Github</a>
-          <a href="#" class="nav__link" to="#">Blog</a>
-        </div>
-      </nav>
-
-
-      <div class="text-center my-24 ">
-        <h1 class="text-5xl font-black">It's Kudakwashe Paradzayi</h1>
-        <p class="text-lg">A very brief but concise description about the value I can provide to clients</p>
-      </div>
-
-      <div class="text-center mb-48">
-        <button class="py-2 px-4 bg-black text-white text-lg rounded shadow uppercase">call to action</button>
-      </div>
-
+    <header class="bg-yellow-brand p-4 py-24">
+      &nbsp;
     </header>
 
     <!-- Higglight the app of the month -->
 
     <section class="flex justify-center">
-      <div class="w-full max-w-xl absolute z-50 -mt-32">
-        <div class="text-right -mb-4 mr-4">
-            <span class="inline-block bg-yellow-brand shadow border-2 border-black py-1 px-4 rounded">App Of The Month</span>
+      <div class="w-full max-w-xl bg-white absolute z-50 -mt-32 border-4 rounded-xl shadow-xl border-black p-8">
+        <div class="flex items-center justify-between">
+          <div class="flex items-end mb-4">
+            <g-image src="~/me.jpg" class="relative z-30 w-16 h-16 rounded-full mr-2 shadow-inner" />
+            <div>
+              <h3 class="text-md font-medium mb-1">Kudakwashe Paradzayi</h3>
+              <a href="https://twitter.com/kudapara" class="text-indigo-600">@kudapara</a>
+            </div>
+          </div>
+
+          <div>
+            <button class="px-4 py-2 border-2 border-black text-black font-medium rounded-full">Follow</button>
+          </div>
         </div>
 
-        <div class="flex flex-col bg-white w-full shadow-lg rounded p-4">
-          <!-- the maximize, resize and close buttons-->
-          <div class="flex mb-4">
-            <div class="h-4 w-4 rounded-full bg-red-400 mr-2">&nbsp;</div>
-            <div class="h-4 w-4 rounded-full bg-yellow-400 mr-2">&nbsp;</div>
-            <div class="h-4 w-4 rounded-full bg-green-400">&nbsp;</div>
+        <div>
+          <p class="mb-4">
+            Hey, I am a full stack web developer. My mission is to build software that will make the lives of people better whilst making profit for your business.
+          </p>
+
+
+          <div>
+            <nav class="container mx-auto flex items-center justify-between mb-4">
+              <div>
+                <a href="#" class="nav__link">Portfolio</a>
+                <a href="#" class="nav__link" to="#">Services</a>
+                <a href="#" class="nav__link" to="#">Work</a>
+ 
+                <a href="#" class="nav__link">FAQs</a>
+                <a href="#" class="nav__link" to="#">Testimonials</a>
+                <a href="#" class="nav__link" to="#">Newsletter</a>
+              </div>
+            </nav>
+
           </div>
 
-          <!-- The image of the  -->
-          <div class="w-full flex-1  mb-4">&nbsp;
-            <g-image src="~/highlight-procurement.png"/>
-          </div>
+        <a href="#apply-for-work" class="inline-block p-4 bg-black text-white text-lg rounded shadow">Let's build something amazing, together &rightarrow;</a>
 
-          <!-- Visit the applicatioin -->
-
-          <button class="border-2 border-black text-lg w-full p-4">
-            Visit Project
-          </button>
         </div>
       </div>
     </section>  
@@ -84,7 +71,7 @@ html { font-family: 'Inter', sans-serif; }
 }
 
 .nav__link {
-  @apply mr-8 font-medium text-xl
+  @apply mr-4 font-medium text-indigo-600 underline
 }
 
 </style>
