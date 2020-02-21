@@ -1,14 +1,11 @@
 <template>
   <Layout>
-    <section class="text-black pt-64 pb-32 relative">
+    <section class="text-black py-32 relative">
       <div class="pt-64 container mx-auto">
-        <div class="flex">
-          <g-image src="~/dotted-trianlge.svg" class="mr-4 -ml-Hello kuda32" />
-          <div class>
-            <h1 class="text-5xl font-black">Portfolio</h1>
-            <p class="text-lg">See what I have created in the past and enjoy yourself!</p>
-          </div>
-        </div>
+      <div class>
+        <h1 class="text-6xl font-black text-white">Portfolio</h1>
+        <p class="text-lg">See what I have created in the past and enjoy yourself!</p>
+      </div>
 
         <div class="mt-32 flex justify-between -mx-16 flex-wrap">
           <div class="px-16 py-2 w-1/2 gallery-image" v-for="i in 4" :key="i">
@@ -38,28 +35,25 @@
           </div>
 
           <div class="px-16 gallery-image">
-            <button
+            <!--<button
               class="border-2 border-white text-white text-lg p-4"
-            >See more of my work &rightarrow;</button>
+            >See more of my work &rightarrow;</button>-->
           </div>
         </div>
       </div>
     </section>
 
-    <section class="text-white py-64 relative">
-      <div class="container mx-auto flex">
+    <section class="text-white pt-64 pb-32 relative">
+      <div class="container mx-auto flex justify-between">
         <div>
-          <div class="flex pr-24 mb-32">
-            <g-image src="~/dotted-trianlge.svg" class="mr-4 -ml-Hello kuda32" />
-            <div class>
-              <h1 class="text-5xl font-black">This is what I do</h1>
-              <p
-                class="text-2xl"
-              >This is my pitch.What I can do for you. I am selling myself to you, my potential client.</p>
-            </div>
+          <div class>
+            <h1 class="text-6xl font-black">This is what I do</h1>
+            <p
+              class="text-2xl max-w-xl mb-8"
+            >This is my pitch.What I can do for you. I am selling myself to you, my potential client.</p>
           </div>
 
-          <div class="ml-36 pl-4">
+          <div class="">
             <ul>
               <li v-for="service in services" :key="service" class="flex items-center text-xl py-2">
                 <svg
@@ -96,13 +90,13 @@
       </div>
     </section>
 
-    <section class="flex items-center justify-center">
-      <div class="container rounded bg-white text-black p-8 relative">
+    <section id="apply-for-work" class="flex items-center justify-center pt-32"> <!-- pt-32 to compensate for the lost padding above-->
+      <div class="w-full bg-white text-black p-8 relative">
         <h3 class="text-5xl font-black">We could build something great, together</h3>
 
         <label for class="block text-xl font-black mb-4">Select the packages that suite your needs</label>
         <p class="py-4">Every company is unique. </p>
-        <div class="flex justify-between">
+        <div class="flex justify-start">
           <div
             v-for="plan in plans"
             :key="plan.code"
@@ -171,8 +165,13 @@
 
               <div class="text-right">
                 <span class="block text-xs text-gray-600 uppercase">Hosting & Maintanance</span>
-                <span class="text-3xl font-black">${{ plan.hostingPrice }}</span>
-                <span class="text-xs uppercase">/month</span>
+                <div v-if="plan.hostingPrice == 0">
+                  <span  class="text-3xl font-black">FREE</span>
+                </div>
+                <div v-else>
+                  <span class="text-3xl font-black">${{ plan.hostingPrice }}</span>
+                  <span class="text-xs uppercase">/month</span>
+                </div>
               </div>
             </div>
           </div>
@@ -194,53 +193,49 @@
         <!-- Input section -->
         <div
           :class="{
-            'hidden': !selectedPackages.includes('basic') && !selectedPackages.includes('rich') && !selectedPackages.includes('webapp')
+            'hidden': !selectedPackages.includes('design') && !selectedPackages.includes('basic') && !selectedPackages.includes('rich') && !selectedPackages.includes('webapp')
           }"
         >
 
-        <div class="mt-8">
-          <h3 class="text-xl font-black mb-4">Briefly Describe your Project</h3>
-          <div class="flex mb-4">
-            <div class="mr-4">
-              <label for="" class="block font-bold uppercase  mb-2">Your Name</label>
-              <input type="text" autofocus class="form-input border-black border-2" placeholder="e.g John Doe">
-            </div>
+          <div class="mt-8">
+            <h3 class="text-xl font-black mb-4">Briefly Describe your Project</h3>
+            <div class="flex mb-4">
+              <div class="mr-4">
+                <label for="" class="block font-bold uppercase  mb-2">Your Name</label>
+                <input type="text" autofocus class="form-input border-black border-2" placeholder="e.g John Doe">
+              </div>
 
-            <div class="mr-4">
-              <label for="" class="block font-bold uppercase mb-2">Company Name</label>
-              <input type="text" class="form-input border-black border-2" placeholder="e.g Progic Private Limited">
-            </div>
+              <div class="mr-4">
+                <label for="" class="block font-bold uppercase mb-2">Company Name</label>
+                <input type="text" class="form-input border-black border-2" placeholder="e.g Progic Private Limited">
+              </div>
 
-            <div class="mr-4">
-              <label for="" class="block font-bold uppercase mb-2">Company Website</label>
-                <input type="url" class="form-input border-black border-2" placeholder="e.g https://progic.co">
+              <div class="mr-4">
+                <label for="" class="block font-bold uppercase mb-2">Company Website</label>
+                  <input type="url" class="form-input border-black border-2" placeholder="e.g https://progic.co">
+                </div>
               </div>
             </div>
+            <div class="pr-4 mb-4">
+              <label for="" class="block font-bold uppercase mb-2">Project Description</label>
+              <textarea name class="form-textarea w-full border-black border-2" id rows="4"></textarea>
+            </div>
+        
+            <label for="" class="block font-bold uppercase mb-2">Email address</label>
+            <div class="bg-white p-4 flex rounded border-2 border-black mr-4">
+              <input
+                type="text"
+                class="flex-1 p-4 outline-none text-black"
+                placeholder="Your email address"
+              />
+              <button
+                class="bg-black hover:shadow-md text-white text-lg py-4 px-16 font-bold rounded"
+              >Choose Package(s) &rightarrow;</button>
+            </div>
           </div>
-          <div class="pr-4 mb-4">
-            <label for="" class="block font-bold uppercase mb-2">Project Description</label>
-            <textarea name class="form-textarea w-full border-black border-2" id rows="4"></textarea>
-          </div>
-        </div>
   
-        <label for="" class="block font-bold uppercase mb-2">Email address</label>
-        <div class="bg-white p-4 flex rounded border-2 border-black mr-4">
-          <input
-            type="text"
-            class="flex-1 p-4 outline-none text-black"
-            placeholder="Your email address"
-          />
-          <button
-            class="bg-black hover:shadow-md text-white text-lg py-4 px-16 font-bold rounded"
-          >Choose Package(s) &rightarrow;</button>
-        </div>
 
         </div>
-        <g-image
-          src="~/me.jpg"
-          class="absolute right-0 mr-8 border-4 border-black z-30 w-24 h-24 rounded-full"
-        />
-      </div>
     </section>
 
     <section class="text-white text-xl py-64">
@@ -255,12 +250,9 @@
 
     <section class="text-white pb-64 relative">
       <div class="container mx-auto">
-        <div class="flex pr-24 mb-32">
-          <g-image src="~/dotted-trianlge.svg" class="mr-4 -ml-Hello kuda32" />
-          <div class>
-            <h1 class="text-5xl font-black">What people say about me</h1>
-            <p class="text-2xl">Some people really say nice things about me you know.</p>
-          </div>
+        <div class>
+          <h1 class="text-6xl font-black">What people say about me</h1>
+          <p class="text-2xl mb-8">Some people really say nice things about me you know.</p>
         </div>
       </div>
       <div class="testimonials-block">
@@ -346,7 +338,7 @@ export default {
 
   data() {
     return {
-      selectedPackages: ["webapp"],
+      selectedPackages: [],
       shownDescription: null,
       services: ["Design", "Programming", "Consulting", "Talks", "Trainings"],
 
@@ -374,6 +366,20 @@ export default {
       ],
 
       plans: [
+        {
+          title: "Website Design",
+          code: "design",
+          description:
+            "Static websites, useful when you are just starting out and just want to bring your brand out there",
+          price: 99,
+          hostingPrice: 0,
+          features: [
+            "5 Pages",
+            "Good Design",
+            "Best Development",
+            "Custom Domain"
+          ]
+        },
         {
           title: "Basic Websites",
           code: "basic",
