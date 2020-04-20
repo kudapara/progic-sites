@@ -159,11 +159,13 @@
         <h3 class="text-5xl font-black font-serif">We could build something great, together</h3>
 
         <!-- <label for class="block text-xl font-black mb-4">Select the packages that suite your needs</label> -->
+        <form name="projects" netlify>
+
         <p class="py-4 max-w-xl">
           Every company is unique. Choose the plan that truly captures the needs of your company and fill in the form that apears below. We will get back to you with a quotation.
         </p> 
         <p class="mb-4 max-w-xl">
-          Please note that these prices are starting prices and may vary with the scope of the projects.
+          Please note that these prices are starting prices and may vary with the scope of the projects. All prices are in United States Dollar (USD).
         </p>
         <div class="flex justify-start flex-wrap">
           <div
@@ -195,7 +197,7 @@
                 <input
                   type="checkbox"
                   v-model="selectedPackages"
-                  name
+                  :name="plan.code"
                   :value="plan.code"
                   id
                   class="form-checkbox text-yellow-brand h-8 w-8"
@@ -272,6 +274,7 @@
                 <input
                   type="text"
                   autofocus
+                  name="name"
                   class="form-input border-black border-2"
                   placeholder="e.g John Doe"
                 />
@@ -281,6 +284,7 @@
                 <label for class="block font-bold uppercase mb-2">Company Name</label>
                 <input
                   type="text"
+                  name="company_name"
                   class="form-input border-black border-2"
                   placeholder="e.g Progic Private Limited"
                 />
@@ -290,6 +294,7 @@
                 <label for class="block font-bold uppercase mb-2">Company Website</label>
                 <input
                   type="url"
+                  name="company_website"
                   class="form-input border-black border-2"
                   placeholder="e.g https://progic.co"
                 />
@@ -298,21 +303,24 @@
           </div>
           <div class="pr-4 mb-4">
             <label for class="block font-bold uppercase mb-2">Project Description</label>
-            <textarea class="form-textarea h-16 w-full border-black border-2"></textarea>
+            <textarea name="project_description" class="form-textarea h-16 w-full border-black border-2"></textarea>
           </div>
 
           <label for class="block font-bold uppercase mb-2">Email address</label>
           <div class="bg-white p-4 flex rounded border-2 border-black mr-4">
             <input
               type="text"
+              name="email"
               class="flex-1 p-4 outline-none text-black"
               placeholder="Your email address"
             />
             <button
+              type="submit"
               class="bg-black hover:shadow-md text-white text-lg py-4 px-16 font-bold rounded"
             >Choose Package(s) &rightarrow;</button>
           </div>
         </div>
+        </form>
       </div>
     </section>
 
@@ -357,26 +365,33 @@
 
           <div class="text-black">
             <div class="bg-white p-4 w-full max-w-md border-t-4 border-indigo-700">
+              <form name="contact" netlify>
+
               <label>
                 <span class="tracking-wide text-sm">What is your name?</span>
-                <input type="text" class="form-input w-full mt-2 mb-4 border-black border-2" name id />
+                <input type="text"
+                name="name" 
+                class="form-input w-full mt-2 mb-4 border-black border-2" name id />
               </label>
               <label>
                 <span class="tracking-wide text-sm">What is your company's name?</span>
-                <input type="text" class="form-input w-full mt-2 mb-4 border-black border-2" name id />
+                <input type="text" name="company_name" class="form-input w-full mt-2 mb-4 border-black border-2" name id />
               </label>
               <label>
                 <span class="tracking-wide text-sm">What is your best email address?</span>
-                <input type="text" class="form-input w-full mt-2 mb-4 border-black border-2" name id />
+                <input type="text" name="email" class="form-input w-full mt-2 mb-4 border-black border-2" name id />
               </label>
 
               <label>
                 <span class="tracking-wide text-sm">What is your message?</span>
-                <textarea name id rows="10" class="form-textarea w-full border-black border-2"></textarea>
+                <textarea id rows="10" name="message" class="form-textarea w-full border-black border-2"></textarea>
               </label>
               <button
+              type="submit"
                 class="bg-yellow-brand text-black py-4 px-8 rounded font-medium mt-8 w-full"
               >Get in touch</button>
+              </form>
+
             </div>
           </div>
         </div>
