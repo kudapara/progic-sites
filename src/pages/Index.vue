@@ -181,7 +181,7 @@
             @click="toggleSelectedPackages(plan.code)"
           >
             <div>
-              <div class="flex justify-center -mt-12 relative" v-if="plan.isMostPopular">
+              <div class="flex justify-center -mt-12 relative" v-show="plan.isMostPopular">
                 <div
                   class="span px-6 bg-yellow-brand uppercase text-black border-4 rounded"
                   :class="{
@@ -197,7 +197,7 @@
                 <input
                   type="checkbox"
                   v-model="selectedPackages"
-                  :name="plan.code"
+                  name="selectedPackages"
                   :value="plan.code"
                   id
                   class="form-checkbox text-yellow-brand h-8 w-8"
@@ -237,10 +237,10 @@
 
                 <div class="text-right">
                   <span class="block text-xs text-gray-600 uppercase">Hosting & Maintanance</span>
-                  <div v-if="plan.hostingPrice == 0">
+                  <div v-show="plan.hostingPrice == 0">
                     <span class="text-3xl font-black">FREE</span>
                   </div>
-                  <div v-else>
+                  <div v-if="plan.hostingPrice > 0">
                     <span class="text-3xl font-black">${{ plan.hostingPrice }}</span>
                     <span class="text-xs uppercase">/month</span>
                   </div>
@@ -371,15 +371,15 @@
                 <span class="tracking-wide text-sm">What is your name?</span>
                 <input type="text"
                 name="name" 
-                class="form-input w-full mt-2 mb-4 border-black border-2" name id />
+                class="form-input w-full mt-2 mb-4 border-black border-2" />
               </label>
               <label>
                 <span class="tracking-wide text-sm">What is your company's name?</span>
-                <input type="text" name="company_name" class="form-input w-full mt-2 mb-4 border-black border-2" name id />
+                <input type="text" name="company_name" class="form-input w-full mt-2 mb-4 border-black border-2" />
               </label>
               <label>
                 <span class="tracking-wide text-sm">What is your best email address?</span>
-                <input type="text" name="email" class="form-input w-full mt-2 mb-4 border-black border-2" name id />
+                <input type="text" name="email" class="form-input w-full mt-2 mb-4 border-black border-2" />
               </label>
 
               <label>
