@@ -335,7 +335,7 @@
         </div>
       </div>
 
-      <div class="container mx-auto flex items-between justify-between pb-32  border-b">
+      <div class="container mx-auto flex items-center justify-between pb-32  border-b">
         <div>
           <h5 class="font-serif font-bold text-xl">Extras</h5>
           <nav class="flex flex-col mt-8">
@@ -350,25 +350,11 @@
           </div>
         </div>
 
-        <div class="flex flex-col justify-between ">
-
-          <div>
-            <h5 class="font-serif font-bold text-xl">Extras</h5>
-            <p class="mt-8">
-              Be the first to know when we release new products, design case studies or technical articles.
-            </p>
-            <p class="mt-4">
-              No spam, we promise.
-            </p>
-          </div>
-          <div>
-
-            <div class="flex p-4 bg-white items-center rounded w-full">
-              <input type="text" placeholder="Your email address" class="flex-1">
-              <button class="bg-yellow-brand text-black py-4 px-8 rounded font-medium">Get in touch</button>
-            </div>
-          </div>
-        </div>
+        <vue-mailchimp-email-signup-form
+          :elementId="'first-email-signup-form'"
+          :url="'https://progic.us8.list-manage.com/subscribe/post?u=fc1ef1701381304c7ce6dbb0f&amp;id=550879120c'"
+          :title="'Subscribe to the Newsletter'"
+          :subtitle="'Be the first to know when we release new products, design case studies or technical articles.\n  No spam, we promise.'"/>
       </div>
 
       <div class="flex items-center justify-center text-center py-8">
@@ -387,13 +373,17 @@
 
 <script>
   import Accordion from "@/components/Accordion";
+  import { VueMailchimpEmailSignupForm } from "vue-mailchimp-email-signup-form";
+
+  import "vue-mailchimp-email-signup-form/dist/vue-mailchimp-email-signup-form.css";
   export default {
     metaInfo: {
       title: "Hello, world!"
     },
 
     components: {
-      Accordion
+      Accordion,
+      VueMailchimpEmailSignupForm
     },
 
     data() {
@@ -641,5 +631,22 @@
     width: 100%;
     position: relative;
     animation: animatedBackground 160s linear infinite;
+  }
+
+  /* Custom Mailchimp styles */
+  .subscribe-container__title {
+    @apply font-serif font-bold text-xl;
+  }
+
+  .subscribe-container__subtitle {
+    @apply text-xl;
+  }
+
+  .subscribe-container__submit {
+    @apply bg-yellow-brand text-black rounded font-medium; 
+  }
+
+  .subscribe-container__submit:hover {
+    background-color: #dcb629;
   }
 </style>
