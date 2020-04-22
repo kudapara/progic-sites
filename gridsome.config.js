@@ -22,8 +22,5 @@ module.exports = {
         plugins: postcssPlugins,
       },
     },
-  },
-  chainWebpack (config) {
-    config.mode('development')
   }
 }
