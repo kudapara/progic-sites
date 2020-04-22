@@ -239,7 +239,7 @@
                   <div v-show="plan.hostingPrice == 0">
                     <span class="text-3xl font-black">FREE</span>
                   </div>
-                  <div v-if="plan.hostingPrice > 0">
+                  <div v-show="plan.hostingPrice > 0">
                     <span class="text-3xl font-black">${{ plan.hostingPrice }}</span>
                     <span class="text-xs uppercase">/month</span>
                   </div>
