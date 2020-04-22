@@ -199,7 +199,6 @@
                   v-model="selectedPackages"
                   name="selectedPackages"
                   :value="plan.code"
-                  id
                   class="form-checkbox text-yellow-brand h-8 w-8"
                 />
               </div>
