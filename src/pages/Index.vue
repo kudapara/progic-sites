@@ -159,8 +159,10 @@
         <h3 class="text-5xl font-black font-serif">We could build something great, together</h3>
 
         <!-- <label for class="block text-xl font-black mb-4">Select the packages that suite your needs</label> -->
-        <form name="projects" netlify>
-
+        <form name="projects"  method="POST" netlify-honeypot="bot-field" netlify>
+        <p class="hidden">
+          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
         <p class="py-4 max-w-xl">
           Every company is unique. Choose the plan that truly captures the needs of your company and fill in the form that apears below. We will get back to you with a quotation.
         </p> 
