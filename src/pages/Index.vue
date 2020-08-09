@@ -261,7 +261,7 @@
 
             <label for class="block font-bold uppercase mb-2">Email address</label>
             <div class="bg-white p-4 flex items-center flex-wrap sm:flex-no-wrap rounded border-2 border-black mr-4">
-              <input type="text" required name="email" class="flex-1 p-4 outline-none text-black"
+              <input type="email" required name="email" class="flex-1 p-4 outline-none text-black"
                 placeholder="Your email address" />
               <button type="submit"
                 class="bg-yellow-brand text-black hover:shadow-md text-lg whitespace-no-wrap w-full sm:w-auto py-2  sm:py-4 px-4 sm:px-16 font-bold rounded">Choose Package(s)
