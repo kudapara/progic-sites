@@ -237,13 +237,13 @@
               <div class="flex mb-4 flex-wrap ">
                 <div class="mr-4 w-full sm:w-auto">
                   <label for class="block font-bold uppercase mb-2">Your Name</label>
-                  <input type="text" autofocus name="name" class="mb-4 w-full sm:w-auto form-input border-black border-2"
+                  <input required type="text" autofocus name="name" class="mb-4 w-full sm:w-auto form-input border-black border-2"
                     placeholder="e.g John Doe" />
                 </div>
 
                 <div class="mr-4 w-full sm:w-auto">
                   <label for class="block font-bold uppercase mb-2">Company Name</label>
-                  <input type="text" name="company_name" class="mb-4 w-full sm:w-auto form-input border-black border-2"
+                  <input required type="text" name="company_name" class="mb-4 w-full sm:w-auto form-input border-black border-2"
                     placeholder="e.g Progic Private Limited" />
                 </div>
 
@@ -256,12 +256,12 @@
             </div>
             <div class="pr-4 mb-4">
               <label for class="block font-bold uppercase mb-2">Project Description</label>
-              <textarea name="project_description" class="form-textarea h-32 w-full border-black border-2"></textarea>
+              <textarea required name="project_description" class="form-textarea h-32 w-full border-black border-2"></textarea>
             </div>
 
             <label for class="block font-bold uppercase mb-2">Email address</label>
             <div class="bg-white p-4 flex items-center flex-wrap sm:flex-no-wrap rounded border-2 border-black mr-4">
-              <input type="text" name="email" class="flex-1 p-4 outline-none text-black"
+              <input type="text" required name="email" class="flex-1 p-4 outline-none text-black"
                 placeholder="Your email address" />
               <button type="submit"
                 class="bg-yellow-brand text-black hover:shadow-md text-lg whitespace-no-wrap w-full sm:w-auto py-2  sm:py-4 px-4 sm:px-16 font-bold rounded">Choose Package(s)
