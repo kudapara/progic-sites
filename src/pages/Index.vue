@@ -317,20 +317,20 @@
 
                 <label>
                   <span class="tracking-wide text-sm">What is your name?</span>
-                  <input type="text" name="name" class="form-input w-full mt-2 mb-4 border-black border-2" />
+                  <input required type="text" name="name" class="form-input w-full mt-2 mb-4 border-black border-2" />
                 </label>
                 <label>
                   <span class="tracking-wide text-sm">What is your company's name?</span>
-                  <input type="text" name="company_name" class="form-input w-full mt-2 mb-4 border-black border-2" />
+                  <input required type="text" name="company_name" class="form-input w-full mt-2 mb-4 border-black border-2" />
                 </label>
                 <label>
                   <span class="tracking-wide text-sm">What is your best email address?</span>
-                  <input type="text" name="email" class="form-input w-full mt-2 mb-4 border-black border-2" />
+                  <input required type="text" name="email" class="form-input w-full mt-2 mb-4 border-black border-2" />
                 </label>
 
                 <label>
                   <span class="tracking-wide text-sm">What is your message?</span>
-                  <textarea id rows="10" name="message" class="form-textarea w-full border-black border-2"></textarea>
+                  <textarea id required rows="10" name="message" class="form-textarea w-full border-black border-2"></textarea>
                 </label>
                 <button type="submit" class="bg-yellow-brand text-black py-4 px-8 rounded font-medium mt-8 w-full">Get
                   in touch</button>
